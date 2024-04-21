@@ -78,7 +78,7 @@ function startOver() {
 }
 
 function nextSequence() {
-  if (level === 15) {
+  if (level === 12) {
     // Stop the game and keep the last card highlighted
     $("#" + gamePattern[level - 1]).addClass("pressed");
     return;
