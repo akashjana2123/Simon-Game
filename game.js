@@ -77,3 +77,21 @@ function startOver() {
   gamePattern = [];
   started = false;
 }
+
+function nextSequence() {
+  if (level === 15) {
+    // Stop the game and keep the last card highlighted
+    $("#" + gamePattern[level - 1]).addClass("pressed");
+    return;
+  }
+  
+  userClickedPattern = [];
+  level++;
+  $("#level-title").text("Level " + level);
+  var randomNumber = Math.floor(Math.random() * 4);
+  var randomChosenColour = buttonColours[randomNumber];
+  gamePattern.push(randomChosenColour);
+
+  $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
+  playSound(randomChosenColour);
+}
