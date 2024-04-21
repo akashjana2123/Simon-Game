@@ -7,11 +7,10 @@ var userClickedPattern = [];
 var started = true;
 var level = 0;
 
-$(document).keypress(function() {
+$(document).ready(function() {
   if (started) {
     $("#level-title").text("Level " + level);
     nextSequence();
-    started = true;
   }
 });
 
