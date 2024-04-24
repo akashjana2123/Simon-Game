@@ -26,24 +26,25 @@ $(".btn").click(function() {
 });
 
 function checkAnswer(currentLevel) {
-
-    if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
-      if (userClickedPattern.length === gamePattern.length){
-        setTimeout(function () {
-          nextSequence();
-        }, 1000);
+  if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
+      if (userClickedPattern.length === gamePattern.length) {
+          setTimeout(function () {
+              nextSequence();
+          }, 1000);
       }
-    } else {
+  } else {
       playSound("wrong");
       $("body").addClass("game-over");
       $("#level-title").text("Game Over, Refresh to Restart");
 
       setTimeout(function () {
-        $("body").removeClass("game-over");
+          $("body").removeClass("game-over");
       }, 200);
+    
+      $("#" + gamePattern[level - 1]).addClass("pressed");
 
       startOver();
-    }
+  }
 }
 
 
